@@ -1,0 +1,397 @@
+.note {
+  position: absolute;
+  background-color: $l-background-elements;
+  text-align: left;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 13px;
+  z-index: 5;
+  color: $notice-color;
+  bottom: -30px;
+}
+
+.prompt {
+  margin-top: 1em;
+  font-size: 13px;
+  font-family: 'Roboto Mono', monospace;
+  color: $notice-color;
+
+  &.hide {
+    opacity: 0;
+  }
+}
+
+.r-tooltip {
+  max-width: 80vw;
+}
+
+.rednote {
+  font-size: 12px;
+  height: 0px;
+  color: $color-f-error;
+  position: absolute;
+  bottom: -15px;
+
+  &.bottom0 {
+    bottom: -2px;
+  }
+}
+
+.groupField {
+  width: 100%;
+  display: inline-flex;
+  vertical-align: center;
+  border-radius: 6px;
+  text-align: center;
+  position: relative;
+}
+
+.dark {
+  .note,
+  .balance {
+    background: none;
+    color: $notice-color;
+  }
+}
+
+.balance {
+  position: absolute;
+  right: 98px;
+  top: -8px;
+  padding: 0 10px 0 10px;
+  background-color: $l-background-elements;
+  text-align: left;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 13px;
+  z-index: 2;
+  color: $notice-color;
+
+  @include media-mobile {
+    right: 69px;
+  }
+}
+
+.notice {
+  line-height: 140%;
+  color: $notice-color;
+  @include ff-regular;
+  width: 78%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+.rednotes {
+  font-size: 16px;
+  text-align: center;
+  color: $color-f-error;
+}
+
+.buttonFull {
+  margin-top: 10px;
+  display: block;
+}
+
+.group {
+  width: 100%;
+  display: inline-flex;
+  height: 60px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  text-align: left;
+  display: block;
+}
+
+.downLabel {
+  position: absolute;
+  top: 0.5em;
+}
+
+.highLevel {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.lowLevel {
+  position: relative;
+
+  &.dark {
+    .additionalСurrencies {
+      background: #2b2b2b;
+    }
+
+    .additionalСurrenciesItemActive {
+      color: $d-color;
+    }
+
+    .delimiter {
+      background: rgba(255,255,255,0.1);
+    }
+  }
+}
+
+.sendBtnsWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentFormWrapper {
+  position: relative;
+  margin-bottom: 30px;
+  textarea {
+    width: 100%;
+    font-family: 'Roboto Mono', monospace;
+    outline: none;
+    padding: 0 16px;
+    margin-top: 10px;
+    height: 75px;
+    resize: vertical;
+  }
+  .group {
+    height: auto;
+  }
+}
+
+.actionBtn {
+  width: calc(50% - 5px);
+  position: relative;
+}
+
+.dashboardViewNotice {
+  width: 100%;
+  margin: 2rem auto;
+  margin-top: 20px;
+  text-align: left;
+}
+
+@include media-mobile {
+  .button {
+    height: 100%;
+  }
+
+  .mobileFont {
+    font-size: 16px !important;
+  }
+
+  .downLabel {
+    top: 0.8em;
+  }
+}
+
+.qrCode {
+  position: absolute;
+  left: 97%;
+  top: 9px;
+}
+
+.customSelectContainer {
+  position: relative;
+}
+
+.customSelectValue {
+  border: 1px solid #ccc;
+  height: 68px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    a {
+      font-size: 13px;
+      color: $primary;
+      &:hover {
+        color: $primary;
+      }
+    }
+    .address {
+      color: $notice-color;
+      font-size: 12px;
+      @include media-mobile {
+        display: none;
+      }
+    }
+    .mobileAddress {
+      color: $notice-color;
+      font-size: 12px;
+      > div {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.currencySelectContainer {
+  right: 85px;
+  z-index: 1;
+  position: absolute;
+  @include media-mobile {
+    right: 55px;
+  }
+}
+
+.coin {
+  position: relative;
+  z-index: 1;
+}
+
+.customSelectList {
+  margin-top: 10px;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  max-height: 300px;
+  background: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 5px 0px;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.08), 0px 1px 4px rgba(0,0,0,0.08);
+}
+
+.additionalСurrencies {
+  position: absolute;
+  padding-left: 0.4em;
+  right: 100px;
+  background: $l-background-elements;
+  z-index: 1;
+  display: flex;
+  top: 22px;
+  align-items: center;
+}
+
+.additionalСurrenciesItem {
+  font-size: 14px;
+  cursor: pointer;
+  @include ff-bold;
+  color: rgba(142,154,163,0.5);
+}
+
+.additionalСurrenciesItemActive {
+  color: $l-color;
+}
+
+.delimiter {
+  width: 1px;
+  height: 16px;
+  background: rgba(0,0,0,0.1);
+  display: inline-block;
+  margin: 0 10px;
+  margin-top: 1px;
+}
+
+.customSelectListItem {
+  margin-top: -1px;
+  padding-left: 10px;
+  border: none;
+  &:hover {
+    background: #f3f3f3;
+  }
+}
+
+.customSelectArrow {
+  position: absolute;
+  right: 25px;
+  &:before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    display: block;
+    border-top: 2px solid #828795;
+    border-right: 2px solid #828795;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+}
+
+.customSelectArrow.active {
+  &:before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+.customSelectListItem.disabled {
+  position: relative;
+  pointer-events: none;
+  &:before {
+    position: absolute;
+    content: '';
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: 1111;
+  }
+}
+
+.amount {
+  position: absolute;
+  text-align: right;
+  right: 60px;
+  font-size: 13px;
+  @include media-mobile {
+    right: 50px;
+  }
+  .currency {
+    color: #1f2d48;
+  }
+  .usd {
+    color: $notice-color;
+  }
+}
+
+
+@media all and (max-width: 480px) {
+  .additionalСurrencies {
+    right: 80px;
+    top: 25px;
+  }
+
+  .additionalСurrenciesItem {
+    font-size: 11px;
+  }
+
+  .balance {
+    right: 78px;
+    top: -6px;
+    font-size: 9px;
+  }
+
+  .customSelectValue {
+    cursor: pointer;
+    div {
+      .mobileAddress {
+        font-size: 8px;
+      }
+    }
+  }
+
+  .prompt {
+    font-size: 10px;
+  }
+}
+
+@include media-mobile {
+  .highLevel {
+    position: relative;
+    margin-bottom: 42px;
+    // below rules solve a problem with qr button display
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  
+    input,
+    input:focus {
+      border: none;
+    }
+
+    &:focus-within {
+      margin-bottom: 40px;
+      border-radius: 2px;
+      border: 2px solid $primary;
+    }
+  }
+}
+

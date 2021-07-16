@@ -1,0 +1,334 @@
+.status {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+
+  &.in {
+    .arrowWrap {
+      svg {
+        transform: rotate(180deg);
+
+        path {
+          stroke: #0CCF14;
+        }
+      }
+    }
+
+    .amount {
+      color: #0CCF14;
+    }
+  }
+
+  &.out {
+    font-weight: bold;
+
+    .amount {
+      color: #EE5B51;
+    }
+
+    svg {
+      path {
+        stroke: #EE5B51;
+      }
+    }
+  }
+
+  &.self {
+    font-weight: bold;
+  }
+}
+
+.arrowWrap {
+  width: 36px;
+  height: 36px;
+  background: rgba(142, 154, 163, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+
+  svg {
+    fill: transparent;
+  }
+}
+
+.cell {
+  border-radius: 20px;
+  padding: 0px 25px;
+  width: 145px;
+  line-height: 40px;
+  height: 40px;
+  text-align: center;
+  display: inline-block;
+}
+
+.confirm,
+.unconfirmed {
+  text-align: center;
+  height: auto;
+  background: rgba(97, 68, 229, 0.1);
+  font-weight: 800;
+  font-size: 8px;
+  line-height: 10px;
+  color: $primary;
+  width: auto;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 2px;
+  margin-left: 10px;
+  position: relative;
+  top: -2px;
+
+  a {
+    font-size: inherit;
+  }
+}
+
+.confirm.red {
+  color: #f51f1f;
+  background: rgba(229, 68, 68, 0.1);
+}
+
+.confirm.green {
+  color: #EE5B51;
+  background: rgba(238, 91, 81, 0.1);
+  padding: 3px 7px;
+}
+
+
+.unconfirmed {
+  color: $notice-color;
+  background: rgba(142, 154, 163, 0.1);
+}
+
+.date {
+  font-size: 12px;
+  font-weight: bold;
+  @include ff;
+  color: $notice-color;
+  white-space: pre-wrap;
+  cursor: pointer;
+  width: 75%;
+
+  @media all and (max-width: 480px) {
+    font-size: 0.65em;
+  }
+}
+
+.address {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.amount {
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 23px;
+  text-align: right;
+  right: 15px;
+  top: 16px;
+  position: absolute;
+}
+
+.amountUsd {
+  font-weight: 600;
+  font-size: 12px;
+  color: $notice-color;
+  line-height: 6px;
+  position: absolute;
+  right: 15px;
+  top: 45px;
+}
+
+.tokenStandard {
+  @include ff-mono;
+  display: inline-block;
+  margin-left: 0.6em;
+  font-size: 0.8em;
+  color: $notice-color;
+}
+
+.historyInfo {
+  margin-left: 50px;
+  margin-top: -37px;
+
+  a {
+    color: #212529;
+
+    @media all and (max-width: 480px) {
+      font-size: 0.85em;
+    }
+  }
+}
+
+.invoiceContactWrapper {
+  font-size: 0.9em;
+  margin-top: 0.2em;
+
+
+  .contact {
+    color: $notice-color;
+    word-break:break-all;
+    white-space: pre-wrap;
+  }
+}
+
+.addressWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+
+  .requests {
+    margin-left: 0.4em;
+    font-size: 0.9em;
+    color: $notice-color;
+  }  
+}
+
+.comment {
+  color: #000;
+}
+
+.btnWrapper {
+  border-top: 1px solid $pale-color;
+  text-align: right;
+  height: 40px;
+  line-height: 48px;
+  margin-top: 15px;
+  @include ff-bold;
+
+  button:first-child {
+    color: $primary;
+  }
+
+  button:last-child {
+    color: $indicating-color;
+    margin-left: 10px;
+  }
+}
+
+.confirmWrapper {
+  border-top: 1px solid #eee;
+  height: 40px;
+  line-height: 48px;
+  margin-top: 15px;
+  @include ff-bold;
+  text-align: center;
+
+  >span {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px;
+    color: #1F2D48;
+  }
+
+  button {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 15px;
+    color: $primary;
+  }
+}
+
+tr.historyRow {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  min-height: 64px;
+  position: relative;
+  background: $l-background-elements;
+  border: 1px solid $inactive-border-color !important;
+  box-shadow: 0px 2px 12px rgba(142, 154, 163, 0.08);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+tr.dark {
+  background: $d-background-elements;
+  box-shadow: $d-box-shadow;
+
+  .historyInfo {
+    a {
+      color: $d-color;
+    }
+  }
+
+  .invoiceContactWrapper {
+    color: $d-color;
+  }
+}
+
+.smallTooltip span {
+  margin-top: -4px;
+
+  span {
+    font-size: 10px;
+  }
+}
+
+@media all and (max-width: 570px) {
+  tr.historyRow {
+    height: max-content;
+    align-items: flex-start;
+  }
+}
+
+
+@media all and (max-width: 767px) {
+  .addressWrapper {
+    font-size: 0.9em;
+
+    .requests {
+      display: none;
+    }
+  }
+
+  .date {
+    width: 65%;
+  }
+
+  .historyInfo {
+    margin-left: 0px;
+    margin-top: 0px;
+    position: relative;
+  }
+
+  .circleIcon {
+    display: none;
+  }
+}
+
+@media all and (max-width: 480px) {
+  tr.dark {
+    box-shadow: none;
+    background: #222528;
+  }
+  
+  .amount {
+    font-size: 0.9em;
+  }
+
+  .amountUsd {
+    font-size: 0.7em;
+  }
+}
+
+
+@media all and (max-width: 400px) {
+  .historyInfo {
+    min-height: 60px;
+  }
+
+  .confirm,
+  .unconfirmed {
+    top: 47px;
+    position: absolute;
+    right: 0;
+  }
+}

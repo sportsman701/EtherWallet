@@ -1,0 +1,25 @@
+.panel {
+  max-width: 1000px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  box-shadow: $l-box-shadow;
+  background: $l-background-elements;
+  border-radius: 4px;
+  @include ff-regular;
+}
+
+.panel.dark {
+  box-shadow: $d-box-shadow;
+  background: $d-background-elements;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid $pale-color;;
+  margin-bottom: 1em;
+}

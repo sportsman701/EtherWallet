@@ -1,0 +1,414 @@
+.txWaitConfirm {
+  padding-right: 10px;
+  color: $primary;
+  cursor: pointer;
+}
+
+.nameRow {
+  display: flex;
+  font-size: 13px;
+  color: $primary;
+
+  a.linkToHistory {
+    cursor: pointer;
+    position: relative;
+    font-size: 13px;
+    color: $primary;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.1em;
+      height: 1px;
+      background-color: $primary;
+      transition: 0.2s;
+    }
+
+    &.desktop::before {
+      width: 0;
+    }
+
+    &.desktop:hover::before {
+      width: 100%;
+    }
+
+    &.mobile::before {
+      width: 100%;
+    }
+  }
+
+  .tokenStandard {
+    @include ff-mono;
+    display: inline-block;
+    margin-left: 0.6em;
+    font-size: 0.8em;
+    color: $notice-color;
+  }
+
+  div {
+    p {
+      font-size: 10px;
+      color: #919ca5;
+      vertical-align: middle;
+      margin-left: 10px;
+      margin-top: 3px;
+    }
+  }
+}
+
+.cryptoBalanceBtn {
+  padding: 0.1rem 0;
+  user-select: none;
+  width: max-content;
+  display: block;
+  white-space: nowrap;
+
+  .icon {
+    display: inline-block;
+    margin-right: 5px;
+  }  
+}
+
+tr button:disabled,
+tr button[disabled],
+tr button[disabled]:hover {
+  background-color: #dbdbdb;
+  cursor: default;
+  color: #626262;
+}
+
+.assetsTableRow {
+  position: relative;
+  padding: 11px 0px;
+  height: max-content;
+
+  &:last-child {
+    &:before {
+      display: none;
+    }
+  }
+
+  &:before {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    content: '';
+    width: 100%;
+    position: absolute;
+    width: 92%;
+    right: 0;
+    bottom: 0px;
+  }
+}
+
+.dark {
+  .errorMessage,
+  .assetsTableCurrencyWrapper,
+  .unconfirmedBalance,
+  .assetsTableValue {
+    background: $d-background-elements;
+  }
+
+  .cryptoBalanceBtn {
+    color: white
+  }
+
+  .assetsTableIcon {
+    img {
+      border-color: $l-color;
+    }
+  }
+}
+
+.assetsTableCurrency {
+  position: relative;
+  display: flex;
+}
+
+.assetsTableIcon {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.web3ProviderIcon {
+  height: 28px;
+  margin-right: 0.5em;
+  margin-bottom: 0.2em;
+}
+
+.assetsTableCurrencyWrapper {
+  position: absolute;
+  right: 49px;
+  font-size: 15px;
+  background: #fff;
+}
+
+.assetsTableCurrencyBalance {
+  margin-left: 2px;
+}
+
+.addressStyle,
+.showAddressStyle,
+.statusStyle {
+  font-size: 12px;
+  margin-left: 10px;
+  color: $notice-color;
+  margin-top: 1px;
+  position: absolute;
+  left: 46px;
+  bottom: -18px;
+}
+
+.showAddressStyle {
+  cursor: pointer;
+}
+
+.assetsTableValue {
+  position: absolute;
+  right: 48px;
+  bottom: -4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: $notice-color;
+  background: #fff;
+
+  img {
+    margin-top: -3px;
+    margin-right: 7px;
+  }
+
+  p {
+    line-height: 21px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  span {
+    display: block;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: right;
+    font-weight: bold;
+    color: $primary;
+    margin-top: 2px;
+  }
+
+  strong {
+    margin-left: 5px;
+    color: $notice-color;
+  }
+}
+
+.errorMessage {
+  position: absolute;
+  right: 30px;
+  font-size: 13px;
+  top: -10px;
+  background: #fff;
+  padding: 10px;
+  z-index: 11;
+
+  a {
+    font-size: 13px;
+    color: $color-link;
+  }
+}
+
+.assetsTableInfo {
+  font-weight: bold;
+  height: 19px;
+
+  >span {
+    >div {
+      position: relative;
+      top: 0;
+    }
+  }
+
+  p {
+    color: $primary;
+    font-size: 13px;
+    margin-bottom: 1px;
+  }
+
+  span {
+    +span {
+      color: $notice-color;
+      font-size: 14px;
+      margin-left: 3px;
+    }
+  }
+
+  strong {
+    font-size: 15px;
+    line-height: 21px;
+    color: $notice-color;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 25px;
+  }
+}
+
+.unconfirmedBalance {
+  font-size: 11px;
+  color: #c9c9c9;
+  margin-top: 0px;
+  display: block;
+  margin-bottom: -30px;
+  position: absolute;
+  right: 100%;
+  top: 3px;
+  padding-right: 10px;
+  padding-left: 5px;
+
+  background: #fff;
+
+  >span {
+    font-size: 11px;
+    color: #c9c9c9;
+    margin-right: 5px;
+  }
+}
+
+.assetsTableDots {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  z-index: 111;
+  transform: translateY(-50%);
+}
+
+.loader {
+  margin-left: -5px;
+}
+
+@media all and (min-width: 993px) {
+  .assetsTableInfo {
+    position: relative;
+
+    >span {
+      >div {
+        right: auto;
+        top: 0;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+  .assetsTableValue {
+    right: 49px;
+  }
+
+  .assetsTableInfo {
+    position: relative;
+
+    >span {
+      >div {
+        right: auto;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .assetsTableValue {
+    right: 45px;
+    bottom: -3px;
+  }
+
+  .assetsTableRow {
+    padding: 11px 25px;
+  }
+
+  .assetsTableInfo {
+    position: relative;
+
+    >span {
+      >div {
+        right: auto;
+        position: absolute;
+        top: 25px;
+      }
+    }
+  }
+
+  .assetsTableCurrencyWrapper {
+    position: absolute;
+    right: 45px;
+    top: 0px;
+    font-size: 15px;
+  }
+}
+
+@media all and (max-width: 530px) {
+  .assetsTableInfo {
+    .errorMessage {
+      position: absolute;
+      background: #fff;
+      z-index: 11;
+      width: calc(100vw - 95px);
+      height: 40px;
+
+      >span {
+        font-size: 10px;
+        top: 20px;
+        width: 84%;
+        line-height: 1.6;
+        white-space: pre-line;
+      }
+
+      a {
+        span {
+          left: auto;
+          top: 0px;
+          font-size: 13px;
+          margin-left: 10px;
+          z-index: 1111111111;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .cryptoBalanceBtn {
+    font-size: 1em;
+  }
+
+  .assetsTableValue {
+    strong,
+    p {
+      font-size: 1em;
+    }
+  }
+
+  .nameRow {
+    a {
+      font-size: 1em;
+    }
+  }
+}
+
+@media all and (max-width: 420px) {
+  .assetsTableCurrencyWrapper {
+    font-size: 0.7em;
+  }
+
+  .nameRow {
+    font-size: 0.7em;
+  
+    a.linkToHistory {
+      font-size: inherit;
+    }
+  }
+
+  .web3ProviderIcon {
+    display: none;
+  }
+}
